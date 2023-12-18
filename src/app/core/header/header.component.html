@@ -1,0 +1,103 @@
+<header id="header" class="fixed-top bg-primary mb-5">
+  <div class="container-fluid d-flex align-items-center" style="padding-left: 5%; padding-right: 5%">
+
+    <a href="/" class="logo" [class.me-auto]="headerPage === 'home' || !headerPage">
+      <img src="assets/image/LOGO-HD-SITE-WEB.png" alt="">
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        @if(headerPage === "home" || headerPage === "space") {
+
+          @if (headerPage === "space") {
+            <li><a class="fw-bold nav-link" routerLink="/home/space" routerLinkActive="active">ACCUEIL</a></li>
+          } @else {
+            <li><a class="fw-bold nav-link" routerLink="/home" routerLinkActive="active">ACCUEIL</a></li>
+          }
+
+          <li><a class="fw-bold nav-link" href="#about">GESTION</a></li>
+          <li><a class="fw-bold nav-link" href="#services">RETRAITE COMPLÉMENTAIRE</a></li>
+          <li><a class="fw-bold nav-link" href="#portfolio">DÉPÔT ET NUMÉRISATION</a></li>
+          <li><a class="fw-bold nav-link" href="#team">DEMANDE DE PRÊTS</a></li>
+          <li class="dropdown"><a href="#" style="text-decoration: none"><span class="fw-bold">SIMULATEUR DE CRÉDIT <i class="bi bi-plus-lg"></i></span></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          @if (headerPage !== "space") {
+            <li><a class="fw-bold nav-link" routerLink="/connexion" routerLinkActive="active">
+              <button class="btn btn-sm text-white fw-bolder btn-warning">
+                <span>CONNEXION</span>
+              </button>
+            </a></li>
+          }
+
+
+        } @else {
+          <li><a class="fw-bold nav-link" routerLink="/home" routerLinkActive="active">ACCUEIL</a></li>
+        }
+
+      </ul>
+     <!-- <div class="d-flex ms-5 me-4">
+        <button class="btn btn-outline-success me-2" type="submit">Search</button>
+        <button class="btn btn-outline-success me-2" type="submit">Search</button>
+        <button class="btn btn-outline-success me-2" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </div>-->
+    </nav>
+    @if (headerPage === "space") {
+
+      <div class="d-flex me-2 justify-content-between ms-auto">
+        <div class="me-3 ms-2">
+          <img width="40" height="40" src="https://picsum.photos/seed/picsum/40/40" class="rounded-circle me-2" alt="avatar">
+          <span class="text-white fw-bolder d-none d-xxl-inline"> Aristide AKA</span>
+        </div>
+        <button class="rounded-circle me-2 btn bg-light h-50"><i class="bi bi-bell-fill"></i></button>
+        <button class="rounded-circle me-2 btn bg-light h-50"><i class="bi bi-gear-fill"></i></button>
+        <button (click)="onLogout()" class="rounded-circle me-2 btn bg-light h-50 w-0">
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+               width="19px" height="24px" viewBox="0 0 512.000000 512.000000"
+               preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+               fill="#000000" stroke="none">
+              <path d="M751 4796 c-53 -29 -50 72 -50 -1836 -1 -1667 0 -1776 17 -1797 9
+              -12 107 -68 217 -126 110 -57 299 -156 420 -219 121 -64 319 -167 440 -230
+              122 -64 291 -152 376 -197 86 -44 166 -81 178 -81 35 0 79 31 91 63 6 19 10
+              169 10 388 l0 359 380 0 c406 0 424 2 450 49 6 13 10 261 10 726 l0 706 -24
+              24 c-36 36 -73 42 -115 19 -24 -13 -40 -31 -48 -54 -9 -26 -12 -195 -12 -650
+              l0 -615 -320 -3 -321 -2 -2 1310 -3 1310 -25 24 c-25 23 -94 60 -815 436 -203
+              106 -374 197 -380 201 -5 5 403 8 928 7 l937 -3 2 -617 3 -617 29 -30 c40 -42
+              93 -43 136 -3 l30 27 1 689 c0 752 2 724 -57 746 -16 6 -492 10 -1242 10 -991
+              -1 -1221 -3 -1241 -14z"/>
+              <path d="M3708 3810 c-57 -58 -49 -74 196 -424 119 -170 215 -310 213 -312 -2
+              -3 -332 -5 -733 -7 -787 -2 -759 0 -783 -54 -19 -41 -13 -81 17 -113 l27 -31
+              738 1 c477 0 737 -4 737 -10 0 -6 -75 -117 -167 -247 -282 -401 -273 -387
+              -273 -428 0 -77 92 -123 152 -75 22 16 500 685 565 789 45 72 48 67 -249 489
+              -150 213 -287 402 -304 420 -44 44 -93 45 -136 2z"/>
+            </g>
+          </svg>
+        </button>
+
+      </div>
+
+    }
+
+
+    <i class="bi bi-list mobile-nav-toggle"></i>
+
+
+  </div>
+</header>

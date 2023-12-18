@@ -1,0 +1,5 @@
+.line-under {
+  text-decoration: underline #DC6F34;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}

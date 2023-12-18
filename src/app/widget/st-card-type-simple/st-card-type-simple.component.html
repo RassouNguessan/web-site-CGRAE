@@ -1,0 +1,22 @@
+
+<div class="card mb-3" [class.bg-warning]="colorCard === 'orange'" [class.bg-primary]="colorCard === 'green'">
+  <div class="row g-0">
+    <div class="text-white effect">
+      <div class="card-body p-lg-3 mt-4">
+        <div class="card-title">
+          <h6 class="fw-bolder">{{cardTitle}}</h6>
+        </div>
+        <div class="card-text">
+          <p style="font-size: 12px;">{{cardBody}}</p>
+
+        </div>
+        <!--<hr style="color: #f7f4f4;">-->
+
+      </div>
+      <div class="card-footer mt-5">
+        <p class="text-white">
+          {{cardFooter}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.effect{
+  background-image: url("../../../assets/img/Groupe13612.png");
+  background-size: cover;
+  position: relative;
+
+}
+
+.zone-card {
+  background-color: white; border: 1px solid #d0d0d0
+}
