@@ -1,0 +1,39 @@
+
+<div class="wrapper-head" [ngStyle]="{ 'width.px': !isVisible ? 60 : 300 }">
+    <div class="card-body">
+
+      <div class="d-flex">
+        <div class="me-3">
+          <div class="p-0">
+            <img class="chat-btn" (click)="onShowCall()" src="assets/image/imgcall.png" alt="">
+          </div>
+        </div>
+        <div *ngIf="isVisible">
+          <span style="font-size: 0.75rem" class="fw-bolder text-primary"><i class=" text-warning bi bi-telephone-fill"></i> 1212</span>
+          <span (click)="onShowCall()" style="font-size: 0.75rem" class="fw-bolder float-end me-2 close"><i class="bi bi-x-lg"></i></span>
+          <div class="text-dark">
+            <p style="font-size: 0.7rem; margin-bottom: 0">Ici, nous répondons à toutes vos interrogations si vous avez besoin.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  <!--<div class="d-flex">
+    <img (click)="onShowCall()" src="assets/image/imgcall.png" alt="">
+    <p class="ms-2 mt-1 text-primary fw-bolder">1212</p>
+  </div>-->
+</div>
+
+  <div class="wrapper rounded-0" [ngStyle]="{ 'opacity': !isVisible ? 0 : 1 }">
+    <div class="chat-form p-lg-3 mt-3 mb-2">
+      <input type="text" class="form-control rounded-0 mb-3" placeholder="NOM ET PRÉNOMS *">
+      <input type="text" class="form-control rounded-0 mb-3" placeholder="NUMÉRO DE TÉLÉPHONE *">
+      <input type="text" class="form-control rounded-0 mb-3" placeholder="ADRESSE EMAIL *">
+      <input type="text" class="form-control rounded-0 mb-3" placeholder="OBJET *">
+      <textarea class="form-control rounded-0" placeholder="DESCRIPTION ICI *" style="height: 170px"></textarea>
+      <div class="form-group login-btn mt-4">
+        <button class="me-4 btn btn-sm  btn-primary btn-block rounded-0 border-0 fw-bold px-lg-3 py-lg-1" type="button">ENVOYER</button>
+        <button type="button" class="btn btn-warning btn-sm rounded-0 btn-block fw-bold text-white px-lg-3 py-lg-1">APPELEZ-NOUS</button>
+      </div>
+    </div>
+  </div>
