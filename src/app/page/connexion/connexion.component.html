@@ -4,44 +4,34 @@
 
   <div class="col-lg-12 page-login-wrap" >
 
-  <div class="col-lg-6 login-wrap-bg">
-    <div class="login-wrapper bg-transparent">
-      <div class="loginbox px-lg-5 mx-auto">
-        <div class="login-right">
-          <div class="login-right-wrap">
-            <div class="account-logo">
-              <a href="index.html"><img src="" alt></a>
-            </div>
-            <span class="fw-bold fs-4"><b>ACCÉDEZ À VOTRE À LA <span class="text-primary">SIGAD</span></b></span>
-
-            <div class="alert alert-danger rounded-0 mt-3" role="alert">
-              Veuillez remplir le formulaire ci-dessous afin d’accéder
-              à la SIGAD. Une fois cela fait, vous recevrez un code OTP pour vous connecter.
-            </div>
-
-              <div class="progress mt-3" style="height: 5px;">
-                <div class="progress-bar  bg-success " role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-
-            <form >
-              <div class="form-group mb-2 mt-4">
-                <input class="form-control rounded-0" placeholder="N° DE SÉCURITÉ SOCIALE *" type="text">
-              </div>
-              <div class="form-group mb-2">
-                <input class="form-control pass-input rounded-0" placeholder="NUMÉRO DE TÉLÉPHONE *   +225 0000000000" type="text">
-              </div>
-
-              <div class="form-group login-btn mt-4">
-                <button (click)="onValidate()" class="me-4 btn btn-sm  btn-primary btn-block rounded-0 py-lg-2 border-0 fw-bold px-lg-4" type="button">VALIDER</button>
-                <button (click)="onReturnHome()" type="button" class="btn btn-outline-danger btn-sm rounded-0  btn-block py-lg-2 px-lg-4 fw-bold">ANNULER</button>
-              </div>
-            </form>
-
-          </div>
-        </div>
+    <app-st-card-connexion>
+      <div title>
+        <span class="fw-bold fs-4"><b>ACCÉDEZ À VOTRE À LA <span class="text-primary">SIGAD</span></b></span>
       </div>
-    </div>
-  </div>
+
+      <div alert>
+        <app-st-alert [alert]="alert"/>
+      </div>
+
+      <div progress-bar>
+        <app-st-progress-bar [step]="progressBar"/>
+      </div>
+
+      <div form>
+        <form [formGroup]="myForm">
+          <div class="form-group mt-4 mb-2">
+            <input formControlName="num_secu" class="form-control rounded-0" placeholder="N° DE SÉCURITÉ SOCIALE *" type="text">
+          </div>
+
+          <div class="form-group mb-3">
+            <input formControlName="tel" class="form-control pass-input rounded-0" placeholder="NUMÉRO DE TÉLÉPHONE *   +225 0000000000" type="text">
+          </div>
+
+          <app-st-button-group [buttonDisabled]="myForm.invalid" [accept]="acceptBtn" [decline]="declineBtn" (submitClicked)="handleSubmit()" (declineClicked)="handleDecline()"/>
+
+        </form>
+      </div>
+    </app-st-card-connexion>
 
   <div class="col-lg-6 login-wrap">
     <div class="login-sec">

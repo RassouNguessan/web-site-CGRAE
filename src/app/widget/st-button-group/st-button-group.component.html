@@ -1,0 +1,13 @@
+
+<div class="d-flex">
+  <!--accept-->
+  <button (click)="onSubmitClick()" [disabled]="buttonDisabled"
+          [ngClass]="{'btn-primary': accept.btnColor === 'green', 'btn-warning': accept.btnColor === 'orange','btn-danger': accept.btnColor === 'red',
+          'text-white': accept.textBtnColor === 'white', 'text-primary': accept.textBtnColor === 'green', 'text-warning': accept.textBtnColor === 'orange','text-danger': accept.textBtnColor === 'red'}"
+          class="me-4 btn btn-sm  btn-block rounded-0 py-lg-2 border-0 fw-bold px-lg-4" type="button">{{accept.textBtn}}</button>
+  <!--decline-->
+  <button (click)="onDeclineClick()"
+          [ngClass]="{'btn-outline-primary': decline.btnColor === 'green', 'btn-outline-warning': decline.btnColor === 'orange','btn-outline-danger': decline.btnColor === 'red',
+          'text-white': decline.textBtnColor === 'white', 'text-primary': decline.textBtnColor === 'green', 'text-warning': decline.textBtnColor === 'orange','text-danger': decline.textBtnColor === 'red'}"
+          type="button" class="btn btn-sm rounded-0  btn-block py-lg-2 px-lg-4 fw-bold">{{decline.textBtn}}</button>
+</div>

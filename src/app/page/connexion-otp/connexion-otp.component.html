@@ -4,50 +4,38 @@
 
   <div class="col-lg-12 page-login-wrap" >
 
-  <div class="col-lg-6 login-wrap-bg">
-    <div class="login-wrapper bg-transparent">
-      <div class="loginbox px-lg-5 mx-auto">
-        <div class="login-right">
-          <div class="login-right-wrap">
-            <div class="account-logo">
-              <a href="index.html"><img src="" alt></a>
-            </div>
-            <span class="fw-bold fs-4"><b>SAISISSEZ LE CODE OTP REÇU.</b></span>
+    <app-st-card-connexion>
+      <div title>
+        <span class="fw-bold fs-4"><b>SAISISSEZ LE CODE OTP REÇU.</b></span>
+      </div>
 
-            <div class="alert alert-danger rounded-0 mt-3" role="alert">
-              Veuillez saisir le code OTP reçu sur votre numéro de téléphone ( +225 00 00 00 00 00 ) pour vous connecter à la SIGAD.
-            </div>
+      <div alert>
+        <app-st-alert [alert]="alert"/>
+      </div>
 
-            <div class="progress mt-3" style="height: 5px;">
-              <div class="progress-bar  bg-success " role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+      <div progress-bar>
+        <app-st-progress-bar [step]="progressBar"/>
+      </div>
 
-            <form >
-              <div class="form-group mb-2 mt-4">
-                <input class="form-control rounded-0" placeholder="CODE OTP*" type="text">
-              </div>
-
-              <div class="form-group login-btn mt-4">
-                <button (click)="onValidate()" class="me-4 btn btn-sm  btn-primary btn-block rounded-0 py-lg-2 border-0 fw-bold px-lg-4" type="button">VALIDER</button>
-                <button (click)="onReturn()" type="button" class="btn btn-outline-danger btn-sm rounded-0  btn-block py-lg-2 px-lg-4 fw-bold">RETOUR</button>
-              </div>
-            </form>
-
+      <div form>
+        <form [formGroup]="myForm">
+          <div class="form-group mt-4 mb-3">
+            <input formControlName="otp" class="form-control rounded-0" placeholder="CODE OTP*" type="text">
           </div>
+
+          <app-st-button-group [buttonDisabled]="myForm.invalid" [accept]="acceptBtn" [decline]="declineBtn" (submitClicked)="handleSubmit()" (declineClicked)="handleDecline()"/>
+
+        </form>
+      </div>
+    </app-st-card-connexion>
+
+    <div class="col-lg-6 login-wrap">
+      <div class="login-sec">
+        <div class="log-img mt-5">
+          <img class="img-fluid" src="assets/image/composantlogin.png" alt="Logo">
         </div>
       </div>
     </div>
   </div>
-
-  <div class="col-lg-6 login-wrap">
-    <div class="login-sec">
-      <div class="log-img mt-5">
-        <img class="img-fluid" src="assets/image/composantlogin.png" alt="Logo">
-      </div>
-    </div>
-  </div>
-
-  </div>
-
 
 </div>
