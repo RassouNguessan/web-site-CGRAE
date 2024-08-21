@@ -1,0 +1,38 @@
+  <div class="col-lg-3 col-md-6">
+    <div class="card rounded-0" style="height: 5rem ">
+        <div class="m-auto">  
+            <div class=" d-flex align-items-center ">
+                <div class="d-flex align-items-center " *ngFor="let step of steps  ">
+                    <div 
+                    [ngClass]="step === currentStep ? 'step-card-orange' : step < currentStep ? 'step-card-green' : 'step-card-gray'"
+                    class="step-card"
+                    [ngStyle]="{ 'background-color': step === currentStep ? '#e67e22' : step < currentStep ? '#029F38' : '' }">
+                        <span class="fw-bold fs-5 " >{{step}}</span>
+                    </div>
+                    <div [ngClass]="step === currentStep ? 'orange-line' : step < currentStep ? 'green-line' : 'gray-line'" 
+                    *ngIf="step < steps.length" 
+                    [ngStyle]="{ 'background-color': step === currentStep ? '#e67e22' : step < currentStep ? '#029F38' : '' }"></div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="container d-flex align-items-center px-5 mt-2">
+        <div class="" *ngIf="currentStep > steps[0] " (click)="onPreviousStep()">
+            <button type="button" class="btn btn-danger rounded-0 me-4 fw-bold fs-5 ">Retour</button>
+        </div>
+        <div class="" style="margin-left: 20px;" (click)="onNextStep()">
+            <button type="button" class="btn btn-secondary rounded-0 fw-bold fs-5 " *ngIf="currentStep < steps.length">Suivant</button>
+            <button type="button" class="btn btn-secondary rounded-0 fw-bold fs-5 " *ngIf="currentStep === steps.length fw-bold fs-5">Valider</button>
+        </div>
+    </div>
+</div>  
+
+
+  
+
+  
+   
+   
+  
+
+  

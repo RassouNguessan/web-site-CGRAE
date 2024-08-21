@@ -1,0 +1,32 @@
+
+.step-card {
+  cursor: pointer;
+  width: 30px; /* Largeur du carré en pixels */
+  height: 30px; /* Hauteur du carré en pixels */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Texte en blanc */
+  margin-right: 5px; /* Espacement entre les carrés */
+   
+}
+
+.step-card-gray {
+  background-color: #C8C8C9; /* Couleur de fond grise */
+}
+
+.orange-line,
+.green-line,
+.gray-line {
+  height: 2px; /* Épaisseur de la ligne horizontale */
+  width: 18px; /* Longueur de la ligne horizontale */
+  margin-right: 5px; /* Espacement entre les lignes */
+}
+
+.gray-line {
+  background-color: #95a5a6; /* Couleur de la ligne grise */
+}
+
+.green-line {
+  background-color: #029F38; /* Couleur de la ligne grise */
+}
